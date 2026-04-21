@@ -8,4 +8,4 @@ We do not use external servers, analytics, or tracking tools.
 
 This extension is designed purely for productivity and user experience.
 
-If you have any questions, contact: [your-email@gmail.com](mailto:dk1816859@gmail.com)
+If you have any questions, contact: [dk1816859@gmail.com](mailto:dk1816859@gmail.com)
