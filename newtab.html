@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusTab – Start Your Day</title>
+    <link rel="stylesheet" href="styles/newtab.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-24.png">
+<link rel="icon" type="image/png" sizes="48x48" href="icons/icon-48.png">
+<link rel="icon" type="image/png" sizes="128x128" href="icons/icon-128.png">
+    <link rel="shortcut icon" href="icons/icon-48.png">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-container">
+        <div class="gradient-bg gradient-1"></div>
+        <div class="gradient-bg gradient-2"></div>
+        <div class="gradient-bg gradient-3"></div>
+        <div class="particle-container" id="particleContainer"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Top Section: Large Greeting & Clock -->
+        <div class="top-section">
+            <h1 class="greeting" id="greeting">Good Morning</h1>
+            <p class="motivational-message" id="motivationalMessage">Start your day with purpose!</p>
+            <div class="top-clock">
+                <div class="clock-value" id="clock">14:23</div>
+            </div>
+        </div>
+
+        <!-- Central Premium Card -->
+        <div class="premium-card">
+            <!-- Focus Input Section -->
+            <div class="focus-section">
+                <label for="focusInput" class="section-label">
+                    <span class="label-icon">🎯</span>
+                    Today's Main Focus
+                </label>
+                <div class="focus-input-wrapper">
+                    <input 
+                        type="text" 
+                        id="focusInput" 
+                        class="focus-input" 
+                        placeholder="What's your main focus today?"
+                        maxlength="100"
+                    >
+                    <span class="focus-icon">✎</span>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+            <!-- Timer Section -->
+            <div class="timer-section">
+                <label class="section-label">
+                    <span class="label-icon">⏱️</span>
+                    Focus Timer
+                </label>
+                <div class="timer-display">
+                    <svg class="timer-circle" viewBox="0 0 180 180">
+                        <defs>
+                            <linearGradient id="timerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="90" cy="90" r="80" class="timer-bg"></circle>
+                        <circle cx="90" cy="90" r="80" class="timer-progress" id="timerProgress"></circle>
+                    </svg>
+                    <div class="timer-text">
+                        <span id="timerDisplay" class="timer-value">25:00</span>
+                        <span class="timer-label">minutes</span>
+                    </div>
+                </div>
+                <div class="timer-helper" id="timerHelper">Get ready to focus!</div>
+                <div class="timer-controls">
+                    <button class="btn btn-start" id="startBtn">
+                        <span class="btn-icon">▶</span> Start Focus
+                    </button>
+                    <button class="btn btn-pause" id="pauseBtn" disabled>
+                        <span class="btn-icon">⏸</span> Pause
+                    </button>
+                    <button class="btn btn-reset" id="resetBtn">
+                        <span class="btn-icon">↻</span> Reset
+                    </button>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+            <!-- Quote Section -->
+            <div class="quote-section">
+                <div class="quote-display" id="quoteDisplay">
+                    <p class="quote-text" id="quoteText">Loading your inspiration...</p>
+                    <p class="quote-author" id="quoteAuthor">— FocusTab</p>
+                </div>
+                <button class="btn btn-quote" id="newQuoteBtn">
+                    <span class="btn-icon">✨</span> Inspire Me
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Settings Button -->
+    <button class="settings-btn" id="settingsBtn" title="Open Settings (Ctrl+Shift+S)">
+        <span class="settings-icon">⚙️</span>
+    </button>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚙️ Settings</h2>
+                <button class="modal-close" id="closeSettingsBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Toggle: Animations -->
+                <div class="setting-item">
+                    <label for="animationsToggle" class="setting-label">
+                        <span>Enable Animations</span>
+                    </label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="animationsToggle" checked>
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <!-- Toggle: Quotes -->
+                <div class="setting-item">
+                    <label for="quotesToggle" class="setting-label">
+                        <span>Show Quotes</span>
+                    </label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="quotesToggle" checked>
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <!-- Toggle: Sound -->
+                <div class="setting-item">
+                    <label for="soundToggle" class="setting-label">
+                        <span>Sound on Timer Complete</span>
+                    </label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="soundToggle" checked>
+                        <span class="slider"></span>
+                    </div>
+                </div>
+
+                <!-- Theme Selection -->
+                <div class="setting-item">
+                    <label for="themeSelect" class="setting-label">Theme</label>
+                    <select id="themeSelect" class="theme-select">
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                        <option value="gradient">Gradient</option>
+                        <option value="ocean">Ocean</option>
+                    </select>
+                </div>
+
+                <!-- Timer Duration -->
+                <div class="setting-item">
+                    <label for="timerDuration" class="setting-label">Focus Duration (minutes)</label>
+                    <input type="number" id="timerDuration" min="1" max="60" value="25">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/newtab.js"></script>
+</body>
+</html>

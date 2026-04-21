@@ -1,0 +1,36 @@
+[33mcommit cb54699b37f826a6c936518d8bdc6b69bc1444cc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 4caf82a 09bcbcf
+Author: AyushSingh2901 <kittuayush1920@gmail.com>
+Date:   Tue Apr 21 15:58:17 2026 +0530
+
+    Merge branch 'main' of https://github.com/DeepakThakur10/FocusTab
+
+[33mcommit 4caf82a80ac8c7923eb1ed19c6c42187121f4348[m
+Author: AyushSingh2901 <kittuayush1920@gmail.com>
+Date:   Tue Apr 21 15:58:08 2026 +0530
+
+    added sound feature
+
+[33mcommit 09bcbcf85c8ff5d25e4e02fc4bccb1d3e4ae0e21[m
+Author: DEEPAK KUMAR THAKUR <148987519+DeepakThakur10@users.noreply.github.com>
+Date:   Tue Apr 21 15:09:23 2026 +0530
+
+    Update privacy-policy.md
+
+[33mcommit d1fce0178f9edfea8f4512feeb40d71955e2cb50[m
+Author: DEEPAK KUMAR THAKUR <148987519+DeepakThakur10@users.noreply.github.com>
+Date:   Tue Apr 21 15:08:56 2026 +0530
+
+    Create README.md
+
+[33mcommit d811eac67042e1925947786088f113b14c18cece[m
+Author: DEEPAK KUMAR THAKUR <148987519+DeepakThakur10@users.noreply.github.com>
+Date:   Tue Apr 21 15:08:13 2026 +0530
+
+    Create privacy-policy.md
+
+[33mcommit 3fe673a766203bc9cccb335e137cdf2b12d4d3b2[m
+Author: AyushSingh2901 <kittuayush1920@gmail.com>
+Date:   Tue Apr 21 14:53:59 2026 +0530
+
+    first commit
