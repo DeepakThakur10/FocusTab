@@ -72,7 +72,6 @@
                                 <stop offset="100%" stop-color="#ec4899" />
                             </linearGradient>
                         </defs>
-                        <!-- r=80 → circumference ≈ 502.65 -->
                         <circle cx="90" cy="90" r="80" class="timer-bg"></circle>
                         <circle cx="90" cy="90" r="80" class="timer-progress" id="timerProgress"></circle>
                     </svg>
@@ -91,27 +90,29 @@
                     <button class="btn btn-pause" id="pauseBtn" disabled aria-label="Pause timer">
                         <span class="btn-icon">⏸</span> Pause
                     </button>
+                    <!-- Resume button: shown only when paused -->
+                    <button class="btn btn-resume" id="resumeBtn" disabled aria-label="Resume timer" style="display:none">
+                        <span class="btn-icon">▶</span> Resume
+                    </button>
                     <button class="btn btn-reset" id="resetBtn" aria-label="Reset timer">
                         <span class="btn-icon">↺</span> Reset
                     </button>
                 </div>
             </div>
 
-            <!-- quote wrapper: toggled as one unit so divider hides too -->
+            <!-- Quote wrapper: toggled as one unit so divider hides too -->
             <div id="quoteWrapper">
-            <div class="divider"></div>
-
-            <!-- Quote -->
-            <div class="quote-section" id="quoteSection">
-                <div class="quote-display" id="quoteDisplay">
-                    <p class="quote-text"   id="quoteText">Loading your inspiration...</p>
-                    <p class="quote-author" id="quoteAuthor">— FocusTab</p>
+                <div class="divider"></div>
+                <div class="quote-section" id="quoteSection">
+                    <div class="quote-display" id="quoteDisplay">
+                        <p class="quote-text"   id="quoteText">Loading your inspiration...</p>
+                        <p class="quote-author" id="quoteAuthor">— FocusTab</p>
+                    </div>
+                    <button class="btn btn-quote" id="newQuoteBtn" aria-label="Show new quote">
+                        <span class="btn-icon">✨</span> Inspire Me
+                    </button>
                 </div>
-                <button class="btn btn-quote" id="newQuoteBtn" aria-label="Show new quote">
-                    <span class="btn-icon">✨</span> Inspire Me
-                </button>
             </div>
-            </div><!-- /#quoteWrapper -->
 
         </div><!-- /.premium-card -->
     </main>
@@ -173,6 +174,48 @@
         </div>
     </div>
 
+    <!-- Timer complete confirmation popup -->
+    <div class="modal" id="completionModal" role="dialog" aria-modal="true" aria-label="Timer complete confirmation">
+        <div class="modal-content completion-modal-content">
+            <div class="modal-header">
+                <h2>Session Complete</h2>
+            </div>
+            <div class="modal-body completion-modal-body">
+                <p class="completion-modal-text">Your timer is complete. Do you want to continue on this tab?</p>
+                <div class="completion-actions">
+                    <button class="btn btn-start" id="continueHereBtn" aria-label="Continue on this tab">
+                        <span class="btn-icon">▶</span> Continue Here
+                    </button>
+                    <button class="btn btn-reset" id="notNowBtn" aria-label="Do not continue now">
+                        Not Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- First-open duration prompt -->
+    <div class="modal" id="initialDurationModal" role="dialog" aria-modal="true" aria-label="Set timer duration">
+        <div class="modal-content completion-modal-content">
+            <div class="modal-header">
+                <h2>Set Duration</h2>
+            </div>
+            <div class="modal-body completion-modal-body">
+                <p class="completion-modal-text">Choose a focus duration for this tab.</p>
+                <div class="setting-item initial-duration-row">
+                    <label for="initialDurationInput" class="setting-label">Duration (min)</label>
+                    <input type="number" id="initialDurationInput" min="1" max="120" value="25">
+                </div>
+                <div class="completion-actions">
+                    <button class="btn btn-start" id="setDurationBtn" aria-label="Set duration and start timer">
+                        <span class="btn-icon">✓</span> Set & Start
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script path updated to scripts/ subdirectory -->
     <script src="scripts/newtab.js"></script>
 </body>
 </html>
